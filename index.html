@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body><center>
+    <h1><U><B>BASIC CALCULATOR</B></U></h1>
+    <div id="main">
+        <form name="f">
+            <input type="text" name="X" placeholder="0" id="Bar"><br>
+            <input type="button" value="9" onclick="f.X.value+=9">
+            <input type="button" value="8" onclick="f.X.value+=8">
+            <input type="button" value="7" onclick="f.X.value+=7">
+            <input type="button" value="+" onclick="add()">
+            <br>
+            <input type="button" value="6" onclick="f.X.value+=6">
+            <input type="button" value="5" onclick="f.X.value+=5">
+            <input type="button" value="4" onclick="f.X.value+=4">
+            <input type="button" value="-" onclick="sub()">
+            <br>
+            <input type="button" value="3" onclick="f.X.value+=3">
+            <input type="button" value="2" onclick="f.X.value+=2">
+            <input type="button" value="1" onclick="f.X.value+=1">
+            <input type="button" value="x" onclick="mul()">
+            <br>
+            <input type="button" value="0" onclick="f.X.value+=0">
+            <input type="button" value="C" onclick="f.X.value=''">
+            <input type="button" value="=" onclick="f.X.value=eval(f.X.value)">
+            <input type="button" value="/" onclick="divide()">
+            <br>
+        </form>
+    </div>
+    <script>
+     function add() {
+       var act=0, b=0;
+       act=f.X.value;
+       b=act.charAt(act.length-1);
+       if(b=='+'|| b=='-' || b=='*'|| b=='/'){
+        f.X.value=act=act.substring(0,act.length-1);
+        f.X.value+='+';
+       }else{
+        f.X.value+='+';
+       }
+     }
+
+       function sub() {
+       var act=0, b=0;
+       act=f.X.value;
+       b=act.charAt(act.length-1);
+       if(b=='+'|| b=='-' || b=='*'|| b=='/'){
+        f.X.value=act=act.substring(0,act.length-1);
+        f.X.value+='-';
+       }else{
+        f.X.value+='-';
+       }
+     }
+
+       function mul() {
+       var act=0, b=0;
+       act=f.X.value;
+       b=act.charAt(act.length-1);
+       if(b=='+'|| b=='-' || b=='*'|| b=='/'){
+        f.X.value=act=act.substring(0,act.length-1);
+        f.X.value+='*';
+       }else{
+        f.X.value+='*';
+       }
+     }
+
+       function divide() {
+       var act=0, b=0;
+       act=f.X.value;
+       b=act.charAt(act.length-1);
+       if(b=='+'|| b=='-' || b=='*'|| b=='/'){
+        f.X.value=act=act.substring(0,act.length-1);
+        f.X.value+='/';
+       }else{
+        f.X.value+='/';
+       }
+     }
+    </script>
+    </center>
+</body>
+</html>
